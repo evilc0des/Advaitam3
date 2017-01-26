@@ -151,13 +151,23 @@ jQuery(document).ready(function($){
     
   })
 
-  $('button').click(function () {
+  $('.pane-technical button').click(function () {
     window.location.href = "./technical.html";
   })
-  $('button').click(function () {
+  $('.pane-cultural button').click(function () {
     window.location.href = "./social.html";
   })
-  $('button').click(function () {
+  $('.pane-social button').click(function () {
+    window.location.href = "./cultural.html";
+  })
+
+  $('.pane-mobile-technical button').click(function () {
+    window.location.href = "./technical.html";
+  })
+  $('.pane-mobile-social button').click(function () {
+    window.location.href = "./social.html";
+  })
+  $('.pane-mobile-cultural button').click(function () {
     window.location.href = "./cultural.html";
   })
 
