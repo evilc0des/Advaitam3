@@ -151,13 +151,13 @@ jQuery(document).ready(function($){
     
   })
 
-  $('.pane-technical button').click(function () {
+  $('button').click(function () {
     window.location.href = "./technical.html";
   })
-  $('.pane-cultural button').click(function () {
+  $('button').click(function () {
     window.location.href = "./social.html";
   })
-  $('.pane-social button').click(function () {
+  $('button').click(function () {
     window.location.href = "./cultural.html";
   })
 
