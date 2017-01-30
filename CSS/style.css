@@ -83,7 +83,7 @@ a {
   position: relative;
 }
 
-.pane-content button
+button
 {
   padding: 20px;
   padding-top: 5px;
@@ -93,7 +93,7 @@ a {
   cursor: pointer;
 }
 
-.pane-content button:hover
+button:hover
 {
   color: black;
   background-color: white;

@@ -161,6 +161,16 @@ jQuery(document).ready(function($){
     window.location.href = "./cultural.html";
   })
 
+  $('.pane-mobile-technical button').click(function () {
+    window.location.href = "./technical.html";
+  })
+  $('.pane-mobile-social button').click(function () {
+    window.location.href = "./social.html";
+  })
+  $('.pane-mobile-cultural button').click(function () {
+    window.location.href = "./cultural.html";
+  })
+
 		$(window).on('scroll', function() {
 
 				var y_scroll_pos = window.pageYOffset;
