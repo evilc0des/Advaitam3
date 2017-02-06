@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-	var countDownDate = new Date("Feb 8, 2017 00:00:00").getTime();
+	var countDownDate = new Date("Feb 9, 2017 00:00:00").getTime();
 
   // Update the count down every 1 second
   var x = setInterval(function() {
@@ -55,28 +55,28 @@ jQuery(document).ready(function($){
         $('#main-container .hero-overlay').css({"pointer-events": "auto"});
       }, 1050);
     });
-  
+
 
   $('#main-container .overlay').mousedown(function (e) {
     //To go thru the overlay we will momentarily hide and redraw the overlay
     $('#main-container .overlay').hide();
     var self = document.elementFromPoint(e.pageX, e.pageY);
-    
+
     paneName = self.classList[1];
     console.log(paneName);
     $('.overlay').show();
 
     var $el = $('#main-container').find('.pane');
-    
+
     //Other panes
     var $other=[];
     $el.each( function(index, element) {
       console.log(self);
-      
+
       if(element !== self)
         $other.push(element);
     });
-    
+
     console.log($other);
     //Creating a new animation timeline
     //var anim = new TweenMax();
@@ -100,7 +100,7 @@ jQuery(document).ready(function($){
       var otherFirstChild = element.firstChild;
       while(otherFirstChild != null && otherFirstChild.nodeType == 3){ // skip TextNodes
         otherFirstChild = otherFirstChild.nextSibling;
-      } 
+      }
       TweenMax.to(otherFirstChild.nextSibling.nextSibling, 0.5, {opacity: 0, display: "none"});
     });
     firstChild.setAttribute("style","display:none;");
@@ -146,9 +146,9 @@ jQuery(document).ready(function($){
         else
           $('.overlay-pc').css({"pointer-events": "auto"});
       }
-      
+
     }
-    
+
   })
 
   $('.pane-technical button').click(function () {
@@ -191,11 +191,11 @@ jQuery(document).ready(function($){
 
 
 
-    
+
 
     //Implementing a separate timer, imported code, may be refactored
 
-      var countDownDate = new Date("Feb 8, 2017 00:00:00").getTime();
+      var countDownDate = new Date("Feb 9, 2017 00:00:00").getTime();
 
       // Get todays date and time
       var now = new Date().getTime();
@@ -211,17 +211,17 @@ jQuery(document).ready(function($){
 
     // Create Countdown
     var Countdown = {
-      
+
       // Backbone-like structure
       $el: $('.countdown'),
-      
+
       // Params
       countdown_interval: null,
       total_seconds     : 0,
-      
-      // Initialize the countdown  
+
+      // Initialize the countdown
       init: function() {
-        
+
         // DOM
         this.$ = {
           days  : this.$el.find('.bloc-time.days .figure'),
@@ -237,16 +237,16 @@ jQuery(document).ready(function($){
             minutes: cMinutes,
             seconds: cSeconds
         };
-        
+
         // Initialize total seconds
         this.total_seconds = (this.values.days * 24 * 60 * 60) + (this.values.hours * 60 * 60) + (this.values.minutes * 60) + this.values.seconds;
 
-        // Animate countdown to the end 
-        this.count();    
+        // Animate countdown to the end
+        this.count();
       },
-      
+
       count: function() {
-        
+
         var that    = this,
             $day_1 = this.$.days.eq(0),
             $day_2 = this.$.days.eq(1),
@@ -256,12 +256,12 @@ jQuery(document).ready(function($){
             $min_2  = this.$.minutes.eq(1),
             $sec_1  = this.$.seconds.eq(0),
             $sec_2  = this.$.seconds.eq(1);
-        
+
             this.countdown_interval = setInterval(function() {
 
             if(that.total_seconds > 0) {
 
-                --that.values.seconds;              
+                --that.values.seconds;
 
                 if(that.values.minutes >= 0 && that.values.seconds < 0) {
 
@@ -299,11 +299,11 @@ jQuery(document).ready(function($){
             else {
                 clearInterval(that.countdown_interval);
             }
-        }, 1000);    
+        }, 1000);
       },
-      
+
       animateFigure: function($el, value) {
-        
+
          var that         = this,
              $top         = $el.find('.top'),
              $bottom      = $el.find('.bottom'),
@@ -331,16 +331,16 @@ jQuery(document).ready(function($){
             }
         });
 
-        TweenMax.to($back_top, 0.8, { 
+        TweenMax.to($back_top, 0.8, {
             rotationX           : 0,
             transformPerspective: 300,
-            ease                : Quart.easeOut, 
-            clearProps          : 'all' 
-        });    
+            ease                : Quart.easeOut,
+            clearProps          : 'all'
+        });
       },
-      
+
       checkHour: function(value, $el_1, $el_2) {
-        
+
         var val_1       = value.toString().charAt(0),
             val_2       = value.toString().charAt(1),
             fig_1_value = $el_1.find('.top').html(),
@@ -357,7 +357,7 @@ jQuery(document).ready(function($){
             // If we are under 10, replace first figure with 0
             if(fig_1_value !== '0') this.animateFigure($el_1, 0);
             if(fig_2_value !== val_1) this.animateFigure($el_2, val_1);
-        }    
+        }
       }
     };
 
